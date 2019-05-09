@@ -133,52 +133,27 @@
     </ul>
   </li>
    
-@if(auth::guard('admin')->user()->group_id == 3) 
- <li class="treeview {{ active_menu('products')[0] }}">
-    <a href="#">
-      <i class="fa fa-floppy-o"></i> <span>{{ trans('admin.products') }}</span>
-      <span class="pull-right-container">
-       </span>
-    </a>
-    <ul class="treeview-menu" style="{{ active_menu('products')[1] }}">
-      <li class=""><a href="{{ aurl('products') }}"><i class="fa  fa-floppy-o  "></i> {{ trans('admin.products') }}</a></li>
-      <li class=""><a href="{{ aurl('products/create') }}"><i class="fa fa-plus"></i> {{ trans('admin.add') }}</a></li>
-    </ul>
-  </li>
-   <li class="treeview {{ active_menu('products')[0] }}">
-    <a href="#">
-      <i class="fa fa-floppy-o"></i> <span>{{ trans('admin.productsAdmin') }}</span>
-      <span class="pull-right-container">
-       </span>
-    </a>
-    <ul class="treeview-menu" style="{{ active_menu('productsAdmin')[1] }}">
-      <li class=""><a href="{{ aurl('productsAdmin') }}"><i class="fa  fa-floppy-o  "></i> {{ trans('admin.productsAdmin') }}</a></li>
-      <li class=""><a href="{{ aurl('productsAdmin/create') }}"><i class="fa fa-plus"></i> {{ trans('admin.add') }}</a></li>
-    </ul>
-  </li>
-  @endif
+ 
 
 
 
 
-
-@if(auth::guard('admin')->user()->group_id ==  1) 
-
-   <li class="treeview {{ active_menu('products')[0] }}">
-    <a href="#">
-      <i class="fa fa-floppy-o"></i> <span>{{ trans('admin.products') }}</span>
-      <span class="pull-right-container">
-       </span>
-    </a>
-    <ul class="treeview-menu" style="{{ active_menu('products')[1] }}">
-      <li class=""><a href="{{ aurl('products') }}"><i class="fa  fa-floppy-o  "></i> {{ trans('admin.products') }}</a></li>
-      <li class=""><a href="{{ aurl('products/create') }}"><i class="fa fa-plus"></i> {{ trans('admin.add') }}</a></li>
-    </ul>
-  </li>
-  @endif
 
  
-@if(auth::guard('admin')->user()->group_id == 2) 
+   <li class="treeview {{ active_menu('products')[0] }}">
+    <a href="#">
+      <i class="fa fa-floppy-o"></i> <span>{{ trans('admin.products') }}</span>
+      <span class="pull-right-container">
+       </span>
+    </a>
+    <ul class="treeview-menu" style="{{ active_menu('products')[1] }}">
+      <li class=""><a href="{{ aurl('products') }}"><i class="fa  fa-floppy-o  "></i> {{ trans('admin.products') }}</a></li>
+      <li class=""><a href="{{ aurl('products/create') }}"><i class="fa fa-plus"></i> {{ trans('admin.add') }}</a></li>
+    </ul>
+  </li>
+ 
+ 
+@if(auth::guard('admin')->user()->group_id ==3) 
 
    <li class="treeview {{ active_menu('productsAdmin')[0] }}">
     <a href="#">

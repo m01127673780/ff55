@@ -65,7 +65,7 @@ public function query() {
 
             ],
             'initComplete' => " function () {
-                this.api().columns([1,2,3]).every(function () {
+                this.api().columns([1,2,3,4,5,6]).every(function () {
                     var column = this;
                     var input = document.createElement(\"input\");
                     $(input).appendTo($(column.footer()).empty())
@@ -79,23 +79,7 @@ public function query() {
 
          ]);
    }
-
-   /**
-    * Get columns.
-    *
-    * @return array
-    */
-
-   /*
-    'product_name_ar',
-      'product_name_en',
-      'desc_ar',
-      'desc_en',
-      'photo',
-       'price',
-       'department_id',s
-    
-   */
+ 
        
  
    protected function getColumns()

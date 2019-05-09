@@ -46,6 +46,7 @@
  /*   padding: 7px 5px;
     position: inherit;*/
   }
+  
 </style>
 
 @include('admin.layouts.footer')

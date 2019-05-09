@@ -134,6 +134,7 @@ return [
     'departments-one'                 =>'شبكه',
     'create_productsAdmin'            =>'اضافه شريحه ',
     'create_sms'                      =>'اضافه شريحه ',
+    'admins'                      =>'مشرف',
 
    ];
 

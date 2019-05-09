@@ -36,10 +36,13 @@
     <!-- /.content -->
   </div>
 <style type="text/css">
-  .content-wrapper{
+   .content-wrapper{
     background-color: #000;
-background-image: url(design/adminlte/dist/img/home.jpg);
+background-image: url(https://scontent-hbe1-1.xx.fbcdn.net/v/t1.0-9/59837262_1195845870584406_8167696975605530624_n.jpg?_nc_cat=109&_nc_ht=scontent-hbe1-1.xx&oh=99562e057daf6b4ab5e8e39c1f32c1ec&oe=5D6F824C);
+background-repeat: no-repeat;
+background-size: cover;
    }
+
    .content-header>.breadcrumb>li>a {
     color: #fff;
     text-decoration: none;

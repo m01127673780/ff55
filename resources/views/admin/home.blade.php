@@ -1,4 +1,4 @@
-@extends('admin.index-3')
+ @extends('admin.index-3')
 @section('content')
  
 
@@ -7,7 +7,7 @@
       <div class="row">
         <div class="container" style="margin-top: 5;">
 
-        
+
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-aqua">
@@ -15,6 +15,7 @@
                   <h3>{{  $Department = DB::table('departments')->count()  }}</h3>
 
               <p> {{ trans('admin.departments-one') }}</p>
+
             </div>
             <div class="icon">
               <i class="fa fa-signal "></i>
@@ -23,7 +24,7 @@
           </div>
         </div>
 
-
+ 
         <!-- ./col -->
         <div class="col-lg-3 col-xs-6">
            <div class="small-box bg-green"> <!-- small box -->
@@ -41,6 +42,7 @@
         </div>
         <!-- ./col -->
                   
+        @if(auth::guard('admin')->user()->group_id == 3) 
 
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->
@@ -56,6 +58,7 @@
             <a href="{{ aurl('productsAdmin') }}" class="small-box-footer"> {{ trans('admin.productsAdmin') }} <i class="fa fa-fa-print"></i></a>
           </div>
         </div>
+        
 
         <!-- ./col -->
         <div class="col-lg-3 col-xs-6">
@@ -64,7 +67,7 @@
             <div class="inner">
               <h3>{{  $Admin = DB::table('admins')->count()  }}</h3>
 
-              <p> 65</p>
+              <p>{{ trans('admin.admins') }} </p>
             </div>
             <div class="icon">
               <i class="fa fa-users"></i>
@@ -72,7 +75,8 @@
             <a href="{{ aurl('admin') }}" class="small-box-footer">{{ trans('admin.admin') }}<i class="fa fa-users"></i></a>
           </div>
         </div>
-        <!-- ./col -->
+        <!-- ./col --> 
+        @endif
 </div></div>
       <!-- /.row -->
       <!-- Main row -->
