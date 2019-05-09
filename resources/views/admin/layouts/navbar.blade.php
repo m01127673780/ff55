@@ -82,7 +82,7 @@
     </a>
     <ul class="treeview-menu" style="{{ active_menu('admin')[1] }}">
       <li class=""><a href="{{ aurl('admin') }}"><i class="fa fa-users"></i> {{ trans('admin.admin') }}</a></li>
-      <li class=""><a href="{{ aurl('departments/create') }}"><i class="fa fa-user-plus"></i> {{ trans('admin.add') }}</a></li>
+      <li class=""><a href="{{ aurl('admin/create') }}"><i class="fa fa-user-plus"></i> {{ trans('admin.add') }}</a></li>
 
     </ul>
   </li>
