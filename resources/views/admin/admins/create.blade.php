@@ -13,10 +13,15 @@
         {!! Form::label('name',trans('admin.name')) !!}
         {!! Form::text('name',old('name'),['class'=>'form-control']) !!}
      </div> 
+
+             @if(auth::guard('admin')->user()->group_id ==5) 
+
       <div class="form-group">
         {!! Form::label('group_id',trans('admin.group_id')) !!}
         {!! Form::text('group_id',old('group_id'),['class'=>'form-control']) !!}
      </div>
+         @endif
+
      <div class="form-group">
         {!! Form::label('email',trans('admin.email')) !!}
         {!! Form::email('email',old('email'),['class'=>'form-control']) !!}

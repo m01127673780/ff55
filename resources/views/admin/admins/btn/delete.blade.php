@@ -1,5 +1,8 @@
 <!-- Trigger the modal with a button -->
+ 
 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#del_admin{{ $id }}"><i class="fa fa-trash"></i></button>
+        
+     
 
 <!-- Modal -->
 <div id="del_admin{{ $id }}" class="modal fade" role="dialog">
