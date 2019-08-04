@@ -76,9 +76,6 @@
           </div>
         </div>
         <!-- ./col --> 
-        @else 
-
-          return redirect('superadmin');
         @endif
 </div></div>
       <!-- /.row -->

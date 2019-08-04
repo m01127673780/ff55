@@ -2,16 +2,26 @@
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
 
-   Config::set('auth.defines', 'admin');
-   Route::get('login', 'AdminAuth@login');
-   Route::post('login', 'AdminAuth@dologin');
-   Route::get('forgot/password', 'AdminAuth@forgot_password');
-   Route::post('forgot/password', 'AdminAuth@forgot_password_post');
-   Route::get('reset/password/{token}', 'AdminAuth@reset_password');
-   Route::post('reset/password/{token}', 'AdminAuth@reset_password_final');
-   Route::group(['middleware' => 'admin:admin'], function () {
 
-      Route::resource('admin', 'AdminController');
+
+     Config::set('auth.defines', 'admin');
+     Route::get('login', 'AdminAuth@login');
+     Route::post('login', 'AdminAuth@dologin');
+     Route::get('forgot/password', 'AdminAuth@forgot_password');
+     Route::post('forgot/password', 'AdminAuth@forgot_password_post');
+     Route::get('reset/password/{token}', 'AdminAuth@reset_password');
+     Route::post('reset/password/{token}', 'AdminAuth@reset_password_final');
+     Route::group(['middleware' => 'admin:admin'], function () {
+
+    Route::get('/edit/profile', 'AdminController@profile');
+
+
+      // Route::get('superadmin' , function(){
+      // return  'admin group id 3' ; 
+      // })->middleware('SuperAdmin');
+
+
+       Route::resource('admin', 'AdminController');
       Route::delete('admin/destroy/all', 'AdminController@multi_delete');
 
       Route::resource('users', 'UsersController');

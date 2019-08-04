@@ -7,15 +7,38 @@ use Illuminate\Http\Request;
 use Storage;
 
 class AdminController extends Controller {
+
+	public function profile()
+	{
+		$admin = auth('admin')->user();
+
+		dd( $admin->email );
+
+		//return view('', compact('admin'));
+
+
+	}
+
+
 	/**
 	 * Display a listing of the resource.
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
 	public function index(AdminDatatable $admin) {
-				 Admin::all();
+		
+		$user_group_id = auth('admin')->user()->group_id;
 
-		return $admin->render('admin.admins.index', ['title' => 'Admin Control']);
+		if( $user_group_id == 3 ) {
+
+			Admin::all();
+			return $admin->render('admin.admins.index', ['title' => 'Admin Control']);
+		}else {
+			return 'Not Found';		
+			// return view('admin.admins.create', ['title' => trans('admin.create_admin')]);
+
+		}
+
 	}
 
 	/**
@@ -41,6 +64,7 @@ class AdminController extends Controller {
 				'name'     => 'required',
 				'email'    => 'required|email|unique:admins',
 				'password' => 'required|min:6',
+                'group_id'         => 'sometimes|nullable|',
   			], [], [
 				'name'     => trans('admin.name'),
 				'email'    => trans('admin.email'),
@@ -71,9 +95,27 @@ class AdminController extends Controller {
 	 * @return \Illuminate\Http\Response
 	 */
 	public function edit($id) {
-		$admin = Admin::find($id);
-		$title = trans('admin.edit');
-		return view('admin.admins.edit', compact('admin', 'title'));
+
+		$user_group_id = auth('admin')->user()->group_id;
+
+		if( $user_group_id == 3 )
+		{
+			$admin = Admin::where('id',$id);
+				
+			if( $admin->count() > 0 ){
+
+				$title = trans('admin.edit');
+				$admin = $admin->first();
+				return view('admin.admins.edit', compact('admin', 'title'));
+			}else {
+				//abort(404); OR
+				return 'Not found';
+			}
+		} // End If Check If Group id == 3
+		else {
+			return 'Not allow Or Not Found Page';
+		}
+
 	}
 
 	/**
@@ -90,6 +132,8 @@ class AdminController extends Controller {
 				'name'     => 'required',
 				'email'    => 'required|email|unique:admins,email,'.$id,
 				'password' => 'sometimes|nullable|min:6',
+				'group_id'         => 'sometimes|nullable|',
+
                
 			], [], [
 				'name'     => trans('admin.name'),
