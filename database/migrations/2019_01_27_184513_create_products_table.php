@@ -30,8 +30,7 @@ Schema::create('products', function (Blueprint $table) {
             $table->integer('department_id')->unsigned()->nullable();
             $table->foreign('department_id')->references('id')->on('departments')->onDelete('cascade');          
             $table->integer('trade_id')->unsigned()->nullable();
-            $table->foreign('trade_id')->references('id')->on('trade_marks')->onDelete('cascade');
-
+ 
             $table->integer('nun_sms')->unsigned()->nullable();
             $table->integer('num_member')->unsigned()->nullable();
             $table->integer('date_month')->unsigned()->nullable();

@@ -365,6 +365,7 @@ class ComposerStaticInit2971eb5ca52bfce55d0db3d8275a18a3
     );
 
     public static $classMap = array (
+        'AdminDB' => __DIR__ . '/../..' . '/database/seeds/AdminDB.php',
         'App\\Admin' => __DIR__ . '/../..' . '/app/Admin.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\DataTables\\AdminDatatable' => __DIR__ . '/../..' . '/app/DataTables/AdminDatatable.php',

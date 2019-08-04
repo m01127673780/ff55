@@ -15,14 +15,7 @@
      </div>
 
    
-
-@if(auth::guard('admin')->user()->group_id === 5) 
-
-
-
-          {!! Form::label('group_id',trans('admin.group_id')) !!}
-        {!! Form::text('group_id',$admin->group_id,['class'=>'form-control']) !!}
-       @endif
+ 
        <div class="form-group">
        
      </div>

@@ -12,7 +12,7 @@ class SettingDB extends Seeder
      */
     public function run()
     {
-       for ($i = 0; $i <1; $i++){
+        for ($i = 0; $i <1; $i++){
 
         	$add = new  Setting;
         	$add->sitename_ar   = 'sitename_ar';

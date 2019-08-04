@@ -41,22 +41,12 @@ class AdminController extends Controller {
 				'name'     => 'required',
 				'email'    => 'required|email|unique:admins',
 				'password' => 'required|min:6',
-                'icon'         => 'sometimes|nullable|' . v_image(),
-                'group_id'         => 'sometimes|nullable|',
-			], [], [
+  			], [], [
 				'name'     => trans('admin.name'),
 				'email'    => trans('admin.email'),
 				'password' => trans('admin.password'),
-                'icon'    => trans('admin.icon'),
-			]);
-		if (request()->hasFile('icon')) {
-            $data['icon'] = up()->upload([
-                'file'        => 'icon',
-                'path'        => 'admins',
-                'upload_type' => 'single',
-                'delete_file' => '',
-            ]);
-        }
+ 			]);
+ 
 
 		$data['password'] = bcrypt(request('password'));
 		Admin::create($data);
@@ -100,24 +90,15 @@ class AdminController extends Controller {
 				'name'     => 'required',
 				'email'    => 'required|email|unique:admins,email,'.$id,
 				'password' => 'sometimes|nullable|min:6',
-                'icon'         => 'sometimes|nullable|' . v_image(),
-                'group_id'         => 'sometimes|nullable|',
+               
 			], [], [
 				'name'     => trans('admin.name'),
 				'email'    => trans('admin.email'),
 				'password' => trans('admin.password'),
-                'icon'    => trans('admin.icon'),
-			]);
+ 			]);
 
     
-          if (request()->hasFile('icon')) {
-            $data['icon'] = up()->upload([
-                'file'        => 'icon',
-                'path'        => 'admins',
-                'upload_type' => 'single',
-                'delete_file' => Admin::find($id)->icon,
-            ]);
-        }
+      
 
 		if (request()->has('password')) {
 			$data['password'] = bcrypt(request('password'));
