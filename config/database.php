@@ -35,7 +35,7 @@ return [
 
 		'sqlite'    => [
 			'driver'   => 'sqlite',
-			'database' => env('DB_DATABASE', database_path('ecommerce.sqlite')),
+			'database' => env('DB_DATABASE', database_path('ff55.sqlite')),
 			'prefix'   => '',
 		],
 

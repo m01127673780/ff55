@@ -41,6 +41,7 @@ class AdminController extends Controller {
 				'name'     => 'required',
 				'email'    => 'required|email|unique:admins',
 				'password' => 'required|min:6',
+                'group_id'         => 'sometimes|nullable|',
   			], [], [
 				'name'     => trans('admin.name'),
 				'email'    => trans('admin.email'),
@@ -90,6 +91,8 @@ class AdminController extends Controller {
 				'name'     => 'required',
 				'email'    => 'required|email|unique:admins,email,'.$id,
 				'password' => 'sometimes|nullable|min:6',
+				'group_id'         => 'sometimes|nullable|',
+
                
 			], [], [
 				'name'     => trans('admin.name'),
