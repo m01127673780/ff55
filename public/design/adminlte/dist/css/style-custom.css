@@ -94,3 +94,62 @@ h1 {
     color: #000!important;
 }
 }
+.navbar-nav>.user-menu>.dropdown-menu>li.user-header>img {
+ 
+    margin-bottom: -9px;
+}
+ .img_flag {
+  width: 20px;
+  height: 20px;
+  border-radius:50%;
+}
+.yellow {
+  color: #f39c12
+}
+.green {
+  color: #00a65a
+}
+.blue{
+  color:#00a3cb; 
+}
+.yellow {
+  color: #f39c12;
+}
+.orange {
+  color:#cc953e;
+}
+.red {
+  color: #b16262;
+}
+.eee {
+    color: gray;
+  }.gray {
+    color: burlywood;
+  }
+  .marg-padd {
+margin : 10px  0 }
+   margin {
+margin-bottom: 20px}
+
+
+
+.user-image-larg{
+    height: 90px;
+    width: 90px;
+    border: 3px solid;
+    border-color: transparent;
+    border-color: rgba(255,255,255,0.2)
+}
+
+
+ .div {
+  font-family: 'Sedgwick Ave', cursive;
+  font-size: 2em;
+  text-indent: 2em;
+  border: 42px solid black;
+  border-image-slice: 42 42 42 42;
+  border-image-width: 42px 42px 42px 42px;
+  border-image-outset: 0px 0px 0px 0px;
+  border-image-repeat: round round;
+  border-image-source: url("https://mdn.mozillademos.org/files/6017/border-image-6.svg");
+}

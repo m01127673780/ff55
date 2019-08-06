@@ -161,3 +161,15 @@ if (!function_exists('v_image')) {
 	}
 }
 /////// Validate Helper Functions ///////
+
+
+
+
+function text_shuffle($len)
+{
+	$text = password_hash(time(), PASSWORD_DEFAULT);
+	$text = str_replace('$', '', $text);
+	$text = str_replace('/', '', $text);
+	$text = str_replace('.', '', $text);
+	return substr($text, rand(1, 25), intval($len));
+}

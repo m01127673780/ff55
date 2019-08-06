@@ -17,12 +17,6 @@ class SuperAdmin
     
     public function handle($request, Closure $next)
     {
-       
-if (\Auth::guard('admin')->group_id == 1) {
-    dd('SuperAdmin');
-return $next($request);
-}else {
-return redirect('/admin/superadmin');
-
+ 
     }
 }

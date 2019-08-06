@@ -11,10 +11,10 @@ class AdminController extends Controller {
 	public function profile()
 	{
 		$admin = auth('admin')->user();
-//		dd( $admin->email );
+		dd( $admin );
 
-		//return view('', compact('admin'));
-				return view('admin.admins.edit', compact('admin', 'title'));
+		
+		//return view('admin.admins.edit', compact('admin', 'title'));
 
 
 	}
@@ -59,19 +59,29 @@ class AdminController extends Controller {
 	 * @return \Illuminate\Http\Response
 	 */
 	public function store() {
+
 		$data = $this->validate(request(),
 			[
 				'name'     => 'required',
 				'email'    => 'required|email|unique:admins',
 				'password' => 'required|min:6',
                 'group_id'         => 'sometimes|nullable|',
+				'icon'        => 'sometimes|nullable|'.v_image(),
   			], [], [
 				'name'     => trans('admin.name'),
 				'email'    => trans('admin.email'),
 				'password' => trans('admin.password'),
+				'icon' => trans('admin.icon'),
  			]);
  
-
+		if (request()->hasFile('icon')) {
+			$data['icon'] = up()->upload([
+					'file'        => 'icon',
+					'path'        => 'admins',
+					'upload_type' => 'single',
+					'delete_file' => '',
+				]);
+		}
 		$data['password'] = bcrypt(request('password'));
 		Admin::create($data);
 		session()->flash('success', trans('admin.record_added'));
@@ -99,37 +109,86 @@ class AdminController extends Controller {
 
 	public function edit_profile()
 	{
+  		 
 		$admin = auth('admin')->user();
 		$title = trans('admin.profile');
-	
-
 		return view('admin.admins.profile', compact('admin', 'title'));
 	}
 
-	public function update_profile()
+	public function update_profile(Request $request)
 	{
-		$data = $this->validate(request(),
-		[
-			'name'     => 'required',
-			'email'    => 'required|email|unique:admins,email,'.auth('admin')->user()->id,
-			'password' => 'sometimes|nullable|min:6',
-			'group_id'         => 'sometimes|nullable|',
+		//dd( $request->all() );
+		$admin_info = auth('admin')->user();
 
-           
-		], [], [
-			'name'     => trans('admin.name'),
-			'email'    => trans('admin.email'),
-			'password' => trans('admin.password'),
-			]);
 
-    
-      
+		// $nicename = [
+		// 	'name'     => trans('admin.name'),
+		// 	'email'    => trans('admin.email'),
+		// 	'password' => trans('admin.password'),
+		// 	'icon' => trans('admin.icon'),
+		// ];
 
-		if (request()->has('password')) {
-			$data['password'] = bcrypt(request('password'));
+		// $validatedData = $request->validate([
+		// 	'name'      => 'required',
+  //           'group_id'  => 'sometimes|nullable|',
+		// 	'icon'      => 'required|image|max:1024|mimes:jpg,jpeg,png',
+		// ], $nicename);
+
+
+
+
+		if( $request->icon != null ) {
+
+			$ext = $request->icon->getClientOriginalExtension();
+	        $size = $request->icon->getSize();
+	        $path = $request->icon->getRealPath();
+
+	        $path = public_path('storage/admins/');
+	        $imageName = 'admins/'.text_shuffle(15).'.'.$ext;
+
+	        $request->icon->move($path, $imageName);
+
+		}else {
+			$imageName = $admin_info->icon;
 		}
-		Admin::where('id', auth('admin')->user()->id)->update($data);
-		return back()->with('success', 'Done Profile Update');
+
+
+		if( $request->email != $admin_info->email ) {
+			$validatedData = $request->validate([
+				'email'    => 'required|email|unique:admins',
+			], $nicename);
+
+			$email = $request->email;
+		}
+
+
+		if ( $request->password == null ) {
+			$password = $admin_info->password;
+		}else {
+			$validatedData = $request->validate([
+				'password' => 'required|min:6',
+			], $nicename);
+
+			$password = bcrypt($request->password);
+
+		}
+
+		
+ 
+		// if (request()->hasFile('icon')) {
+		// 			'file'        => 'icon',
+		// 			'path'        => 'admins',
+		// 			'upload_type' => 'single',
+		// 			'delete_file' => '',
+		// 		]);
+		// }
+
+
+
+		// $data['password'] = bcrypt(request('password'));
+		// Admin::create($data);
+		// session()->flash('success', trans('admin.record_added'));
+		// return redirect(aurl('admin'));
 	}
 
 
@@ -165,32 +224,33 @@ class AdminController extends Controller {
 	 * @return \Illuminate\Http\Response
 	 */
 	public function update(Request $r, $id) {
-
 		$data = $this->validate(request(),
 			[
 				'name'     => 'required',
-				'email'    => 'required|email|unique:admins,email,'.$id,
-				'password' => 'sometimes|nullable|min:6',
-				'group_id'         => 'sometimes|nullable|',
-
-               
-			], [], [
+				'email'    => 'required|email|unique:admins',
+				'password' => 'required|min:6',
+                'group_id'         => 'sometimes|nullable|',
+				'icon'        => 'sometimes|nullable|'.v_image(),
+  			], [], [
 				'name'     => trans('admin.name'),
 				'email'    => trans('admin.email'),
 				'password' => trans('admin.password'),
+				'icon' => trans('admin.icon'),
  			]);
-
-    
-      
-
-		if (request()->has('password')) {
-			$data['password'] = bcrypt(request('password'));
+ 
+		if (request()->hasFile('icon')) {
+			$data['icon'] = up()->upload([
+					'file'        => 'icon',
+					'path'        => 'admins',
+					'upload_type' => 'single',
+					'delete_file' => '',
+				]);
 		}
-		Admin::where('id', $id)->update($data);
-		session()->flash('success', trans('admin.updated_record'));
+		$data['password'] = bcrypt(request('password'));
+		Admin::create($data);
+		session()->flash('success', trans('admin.record_added'));
 		return redirect(aurl('admin'));
 	}
-
 	/**
 	 * Remove the specified resource from storage.
 	 *
@@ -202,7 +262,8 @@ class AdminController extends Controller {
 		session()->flash('success', trans('admin.deleted_record'));
 		return redirect(aurl('admin'));
 	}
- 	public function multi_delete() {
+
+	public function multi_delete() {
 		if (is_array(request('item'))) {
 			Admin::destroy(request('item'));
 		} else {
@@ -212,3 +273,4 @@ class AdminController extends Controller {
 		return redirect(aurl('admin'));
 	}
 }
+ 

@@ -58,7 +58,6 @@ $(document).ready(function(){
             {!! Form::label('keyword',trans('admin.keyword')) !!}
             {!! Form::textarea('keyword',$department->keyword,['class'=>'form-control']) !!}
         </div>
-        
         <div class="form-group">
             {!! Form::label('icon',trans('admin.icon')) !!}
             {!! Form::file('icon',['class'=>'form-control']) !!}

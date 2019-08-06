@@ -17,6 +17,7 @@ class AdminDatatable extends DataTable {
 			->addColumn('checkbox', 'admin.admins.btn.checkbox')
 			->addColumn('edit', 'admin.admins.btn.edit')
 			->addColumn('delete', 'admin.admins.btn.delete')
+			->addColumn('image', 'admin.admins.btn.image')
  			->rawColumns([
 				'edit',
 				'delete',
@@ -57,11 +58,11 @@ class AdminDatatable extends DataTable {
 						}"],
 
 					['extend' => 'print', 'className' => 'btn btn-primary', 'text' => '<i class="fa fa-print"></i>'],
-					['extend' => 'csv', 'className' => 'btn btn-info', 'text' => '<i class="fa fa-file"></i> '.trans('admin.ex_csv')],
-					['extend' => 'excel', 'className' => 'btn btn-success', 'text' => '<i class="fa fa-file"></i> '.trans('admin.ex_excel')],
+					['extend' => 'csv', 'className' => 'btn btn-success', 'text' => '<i class="fa fa-file"></i> '.trans('admin.ex_csv')],
+					// ['extend' => 'excel', 'className' => 'btn btn-success', 'text' => '<i class="fa fa-file"></i> '.trans('admin.ex_excel')],
 					['extend' => 'reload', 'className' => 'btn btn-default', 'text' => '<i class="fa fa-refresh"></i>'],
 					[
-						'text' => '<i class="fa fa-trash"></i>', 'className' => 'btn btn-danger delBtn'],
+						'text' => '<i class="fa fa-trash"></i>', 'className' => 'btn btn-danger delBtn marg-padd'],
 
 				],
 				'initComplete' => " function () {
@@ -108,6 +109,11 @@ class AdminDatatable extends DataTable {
 				'data'  => 'email',
 				'title' => 'Admin Email',
 				'title' => trans('admin.admin_email'),
+			],[
+				'name'  => 'image',
+				'data'  => 'image',
+				'title' => 'Admin image',
+				'title' => trans('admin.admin_image'),
 			], [
 				'name'  => 'created_at',
 				'data'  => 'created_at',

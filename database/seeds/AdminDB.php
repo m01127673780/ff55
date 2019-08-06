@@ -17,7 +17,7 @@ class AdminDB extends Seeder
             $add['name'] = "Admin";
             $add['email'] = "admin@test.com";
             $add['password'] = bcrypt(123456);
-            $add['group_id'] = 1;
+            $add['group_id'] = 3;
             $add->save();
         }
     }

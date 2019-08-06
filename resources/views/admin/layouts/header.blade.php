@@ -40,7 +40,6 @@
 <link rel="stylesheet" href="{{ url('/') }}/design/adminlte/jstree/themes/default/style.css">
 <link rel="stylesheet" href="{{ url('/') }}/design/adminlte/dist/css/tableRespons.css">
 <script src="{{ url('/design/adminlte/dist/js/myfunctions.js') }}"></script>
-<link rel="stylesheet" href="{{ url('/') }}/design/adminlte/dist/css/style-custom.css">  
   
   
   
@@ -52,6 +51,8 @@
     }
   </style>
   @endif
+  <link rel="stylesheet" href="{{ url('/') }}/design/adminlte/dist/css/style-custom.css">  
+
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="{{ url('/') }}/design/adminlte/dist/css/skins/_all-skins.min.css">

@@ -2,10 +2,10 @@
 
 namespace App\DataTables;
 
-use App\Model\Product;
+use App\Model\Department;
 use Yajra\DataTables\Services\DataTable;
 
-class ProductsDatatable extends DataTable
+class DepartmentsDatatable extends DataTable
 {
    /**
     * Build DataTable class.
@@ -16,9 +16,9 @@ class ProductsDatatable extends DataTable
    public function dataTable($query)
    {
       return datatables($query)
-         ->addColumn('checkbox', 'admin.products.btn.checkbox')
-         ->addColumn('edit', 'admin.products.btn.edit')
-         ->addColumn('delete', 'admin.products.btn.delete')
+         ->addColumn('checkbox', 'admin.departments1.btn.checkbox')
+         ->addColumn('edit', 'admin.departments1.btn.edit')
+         ->addColumn('delete', 'admin.departments1.btn.delete')
          ->rawColumns([
             'edit',
             'delete',
@@ -87,14 +87,12 @@ public function query() {
     */
 
    /*
-    'product_name_ar',
-      'product_name_en',
-      'desc_ar',
-      'desc_en',
-      'photo',
-       'price',
-       'department_id',s
-    
+        'dep_name_ar',
+    'dep_name_en',
+    'icon',
+    'description',
+    'keyword',
+    'parent',
    */
        
  
@@ -114,29 +112,13 @@ public function query() {
             'data'  => 'product_name_ar',
             'title' => trans('admin.product_name_ar'),
          ],[
-            'name'  => 'desc_ar',
-            'data'  => 'desc_ar',
-            'title' => trans('admin.desc_ar'),
+            'name'  => 'dep_name_ar',
+            'data'  => 'dep_name_ar',
+            'title' => trans('admin.dep_name_ar'),
          ],[
             'name'  => 'price',
             'data'  => 'price',
             'title' => trans('admin.price'),
-         ],[
-            'name'  => 'nun_sms',
-            'data'  => 'nun_sms',
-            'title' => trans('admin.nun_sms'),
-         ],[
-            'name'  => 'department_id.dep_name_ar',
-            'data'  => 'department_id.dep_name_ar',
-            'title' => trans('admin.department_id'),
-         ], [
-            'name'  => 'date_month',
-            'data'  => 'date_month',
-            'title' => trans('admin.date_month'),
-         ],[
-            'name'  => 'updated_at',
-            'data'  => 'updated_at',
-            'title' => trans('admin.updated_at'),
          ], [
             'name'       => 'edit',
             'data'       => 'edit',

@@ -40,7 +40,7 @@ class ProductsAdminController extends Controller {
             [
                 'product_name_ar' => 'required',
                 // 'product_name_en' => 'required',
-                'desc_ar'         => 'required',
+                'desc_ar'         => 'sometimes|nullable|',
                 // 'desc_en'         => 'required',
                 'price'           => 'required',
                 'nun_sms'           => 'required',
@@ -107,7 +107,7 @@ class ProductsAdminController extends Controller {
             [
                 'product_name_ar' => 'required',
                 // 'product_name_en' => 'required',
-                'desc_ar'         => 'required',
+                'desc_ar'         => 'sometimes|nullable|',
                 'desc_en'         => 'required',
                 'price'           => 'required',
                 'nun_sms'           => 'required',

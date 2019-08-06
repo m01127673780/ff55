@@ -45,7 +45,7 @@ return [
    'no'                           => 'لا',
    'close'                        => 'غلق',
    'name'                         => 'الاسم',
-   'email'                        => 'البريد الالكترونى',
+   'email'                        => 'البريد الالكترونى ',
    'password'                     => 'كلمة السر',
    'record_added'                 => 'تم الاإضافة بنجاح',
    'save'                         => 'حفظ',
@@ -69,7 +69,7 @@ return [
    'message_maintenance'          => 'رسالة الصيانة',
              'departments'                  => 'الشبكات',
    'department '                  => ' الشبكات',
-   'dep_name'                  => 'اسم القسم بالعربى',
+   'dep_name_ar'                  => 'اسم القسم بالعربى',
    'dep_name_en'                  => 'اسم القسم بالانجليزية',
    'parent'                       => 'فرعى من',
    'icon'                         => 'الرمز',
@@ -135,6 +135,12 @@ return [
     'create_productsAdmin'            =>'اضافه شريحه ',
     'create_sms'                      =>'اضافه شريحه ',
     'admins'                      =>'مشرف',
+    'Messenger_of_Allah_Mohamad'  =>'اللهم صل وسلم على سيدنا محمد وعلى آله وصحبه وسلم',
+     'ff55_mobile'            =>'فيفتي فايف لخدمات المحمول',
+     'group_id'            =>'مستوى المشرف',
+     'logoword'            =>'فافتى فايف',
+     'i_forgot_my_password'            =>'     هل نسيت كلمه المرور  ؟'   ,
+     'remember_me'            =>' تذكرنى ',
 
    ];
 

@@ -60,12 +60,14 @@ class UsersDatatable extends DataTable {
 						}"],
 
 					['extend' => 'print', 'className' => 'btn btn-primary', 'text' => '<i class="fa fa-print"></i>'],
-					['extend' => 'csv', 'className' => 'btn btn-info', 'text' => '<i class="fa fa-file"></i> '.trans('admin.ex_csv')],
-					['extend' => 'excel', 'className' => 'btn btn-success', 'text' => '<i class="fa fa-file"></i> '.trans('admin.ex_excel')],
+					['extend' => 'csv', 'className' => 'btn btn-success', 'text' => '<i class="fa fa-file"></i> '.trans('admin.ex_csv')],
+					// ['extend' => 'excel', 'className' => 'btn btn-success', 'text' => '<i class="fa fa-file"></i> '.trans('admin.ex_excel')],
 					['extend' => 'reload', 'className' => 'btn btn-default', 'text' => '<i class="fa fa-refresh"></i>'],
 					[
-						'text' => '<i class="fa fa-trash"></i>', 'className' => 'btn btn-danger delBtn'],
-
+						'text' => '<i class="fa fa-trash"></i>', 'className' => 'btn btn-danger delBtn marg-padd'],
+					 
+					 
+						 
 				],
 				'initComplete' => " function () {
 		            this.api().columns([2,3]).every(function () {

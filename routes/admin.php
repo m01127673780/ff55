@@ -16,11 +16,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
       Route::get('/edit/profile', 'AdminController@edit_profile');
       Route::post('/edit/profile', 'AdminController@update_profile');
 
-      // Route::get('superadmin' , function(){
-      // return  'admin group id 3' ; 
-      // })->middleware('SuperAdmin');
-
-
+       
        Route::resource('admin', 'AdminController');
       Route::delete('admin/destroy/all', 'AdminController@multi_delete');
 

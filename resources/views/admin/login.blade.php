@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="{{ url('design/adminlte') }}/bower_components/bootstrap/dist/css/bootstrap.min.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="{{ url('design/adminlte') }}/bower_components/font-awesome/css/font-awesome.min.css">
-  <!-- Ionicons -->
+  <!-- Ionicons -->zz
   <link rel="stylesheet" href="{{ url('design/adminlte') }}/bower_components/Ionicons/css/ionicons.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ url('design/adminlte') }}/dist/css/AdminLTE.min.css">
@@ -49,12 +49,16 @@
         <span class="eff"></span>
       </div>
        <input type="submit"class="btn btn-success" value="{{ trans('admin.login') }}">
-            <div class="checkbox icheck">
+            <div class="checkbox icheck">  
             <label>
-              <input type="checkbox" name="rememberme" value="1"  style="color: #fff"> Remember Me
+              <input type="checkbox" name="rememberme" value="1"  style="color: #fff"> 
+                {{ trans('admin.remember_me') }}
+
             </label>
           </div>
-         <a    href="{{ aurl('forgot/password') }}">I forgot my password</a><br>
+         <a    href="{{ aurl('forgot/password') }}">
+{{ trans('admin.i_forgot_my_password') }} 
+        </a><br>
     </form>
 
 </div>

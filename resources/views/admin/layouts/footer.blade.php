@@ -62,9 +62,9 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.8.0/locales/bootstrap-datepicker.ar.min.js"></script>
 
  
-         <script type="text/javascript">
-             $('.alert').fadeOut(900);
-         </script>
+         {{-- <script type="text/javascript">
+             $('.alert').fadeOut(1400);
+         </script> --}}
 
 @stack('js')
 @stack('css')

@@ -37,7 +37,7 @@ class DepartmentsController extends Controller {
 		$data = $this->validate(request(),
 			[
 				'dep_name_ar' => 'required',
-				'dep_name_en' => 'required',
+				'dep_name_en' => 'sometimes|nullable',
 				'parent'      => 'sometimes|nullable|numeric',
 				'icon'        => 'sometimes|nullable|'.v_image(),
 				'description' => 'sometimes|nullable',
@@ -100,7 +100,7 @@ class DepartmentsController extends Controller {
 		$data = $this->validate(request(),
 			[
 				'dep_name_ar' => 'required',
-				'dep_name_en' => 'required',
+				'dep_name_en' => 'sometimes|nullable',
 				'parent'      => 'sometimes|nullable|numeric',
 				'icon'        => 'sometimes|nullable',
 				'description' => 'sometimes|nullable',
