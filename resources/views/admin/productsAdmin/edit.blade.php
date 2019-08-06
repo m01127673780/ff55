@@ -74,7 +74,7 @@ $(document).ready(function(){
 
          <div class="form-group">
             {!! Form::label('price',trans('admin.price')) !!}
-            {!! Form::text('price',$productAdmin->price ,['class'=>'form-control']) !!}
+            {!! Form::text('price',$productAdmin->price ,['class'=>'form-control','maxlength'=>"9"]) !!}
         </div>     
             <div class="form-group">
             {!! Form::label('nun_sms',trans('admin.nun_sms')) !!}

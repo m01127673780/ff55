@@ -13,8 +13,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin'], function () {
      Route::post('reset/password/{token}', 'AdminAuth@reset_password_final');
      Route::group(['middleware' => 'admin:admin'], function () {
 
-    Route::get('/edit/profile', 'AdminController@profile');
-
+      Route::get('/edit/profile', 'AdminController@edit_profile');
+      Route::post('/edit/profile', 'AdminController@update_profile');
 
       // Route::get('superadmin' , function(){
       // return  'admin group id 3' ; 

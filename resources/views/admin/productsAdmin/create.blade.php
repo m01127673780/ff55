@@ -67,7 +67,7 @@ $(document).ready(function(){
             {!! Form::label('product_name_en',trans('admin.product_name_en')) !!}
             {!! Form::text('product_name_en',old('product_name_en'),['class'=>'form-control']) !!}
         </div> -->
-
+ 
          <div class="form-group">
             {!! Form::label('desc_ar',trans('admin.desc_ar')) !!}
             {!! Form::text('desc_ar',old('desc_ar'),['class'=>'form-control']) !!}
@@ -75,20 +75,20 @@ $(document).ready(function(){
 
           <div class="form-group">
             {!! Form::label('num_member',trans('admin.num_member')) !!}
-            {!! Form::text('num_member',old('num_member'),['class'=>'form-control']) !!}
+            {!! Form::number('num_member',old('num_member'),['class'=>'form-control']) !!}
         </div> 
                   <div class="form-group">
             {!! Form::label('date_month',trans('admin.date_month')) !!}
-            {!! Form::text('date_month',old('date_month'),['class'=>'form-control']) !!}
+            {!! Form::number('date_month',old('date_month'),['class'=>'form-control','maxlength'=>"2"]) !!}
         </div> 
 
          <div class="form-group">
             {!! Form::label('price',trans('admin.price')) !!}
-            {!! Form::text('price',old('price'),['class'=>'form-control']) !!}
+            {!! Form::text('price',old('price'),['class'=>'form-control','maxlength'=>"9"]) !!}
         </div>  
         <div class="form-group">
             {!! Form::label('nun_sms',trans('admin.nun_sms')) !!}
-            {!! Form::text('nun_sms',old('nun_sms'),['class'=>'form-control']) !!}
+            {!! Form::number('nun_sms',old('nun_sms'),['class'=>'form-control']) !!}
         </div>
 
 

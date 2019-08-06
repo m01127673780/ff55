@@ -1,8 +1,6 @@
 <?php
-
 use Illuminate\Database\Seeder;
 use App\Admin;
-
 class AdminDB extends Seeder
 {
     /**
@@ -12,14 +10,15 @@ class AdminDB extends Seeder
      */
     public function run()
     {
-            for ($i = 0; $i <1; $i++){
+        for ($i = 0; $i <1; $i++){
             $add = new  Admin;
+             
+     $add = new  Admin;
             $add['name'] = "Admin";
             $add['email'] = "admin@test.com";
             $add['password'] = bcrypt(123456);
             $add['group_id'] = 1;
             $add->save();
-         }
+        }
     }
 }
- 

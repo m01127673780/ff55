@@ -84,6 +84,13 @@ h1 {
 @media (min-width: 768px) {
   .table thead tr th,
   .table tbody tr td {
-    padding: 15px 20px;
+    padding:  5px 10px;
   }
+}
+
+
+@media (max-width: 767px) {
+.skin-blue .main-header .navbar .dropdown-menu li a {
+    color: #000!important;
+}
 }

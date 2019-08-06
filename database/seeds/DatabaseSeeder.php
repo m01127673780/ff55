@@ -13,5 +13,6 @@ class DatabaseSeeder extends Seeder
     {
          $this->call(SettingDB::class);
          $this->call(AdminDB::class);
+         $this->call(DepartmentDB::class);
     }
 }

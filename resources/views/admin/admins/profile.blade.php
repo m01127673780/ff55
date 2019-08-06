@@ -8,7 +8,7 @@
   </div>
   <!-- /.box-header -->
   <div class="box-body">
-    {!! Form::open(['url'=>aurl('admin/'.$admin->id),'method'=>'put' ]) !!}
+    {!! Form::open(['url'=>aurl('edit/profile'),'method'=>'post' ]) !!}
      <div class="form-group">
         {!! Form::label('name',trans('admin.name')) !!}
         {!! Form::text('name',$admin->name,['class'=>'form-control']) !!}
@@ -29,8 +29,8 @@
      </div>
      
 
-
-     {!! Form::submit(trans('admin.save'),['class'=>'btn btn-primary']) !!}
+     <button class="btn btn-primary" onclick="if( confirm('هل أنت متاكد من تعديل البيانات') ){return true;}else{return false;}">{{ trans('admin.save') }}</button>
+     {{-- {!! Form::submit(trans('admin.save'),['class'=>'btn btn-primary']) !!} --}}
     {!! Form::close() !!}
   </div>
   <!-- /.box-body -->

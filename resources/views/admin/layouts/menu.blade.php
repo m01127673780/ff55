@@ -241,7 +241,7 @@
                 @endif
 
                 <p>
-                  Alexander Pierce - Web Developer
+                  Alexander  Pierce - Web Developer
                   <small>Member since Nov. 2012</small>
                 </p>
               </li>
@@ -263,23 +263,10 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                @if(auth::guard('admin')->user()->group_id ==  1) 
-                <a href="{{ aurl('admin/1/edit') }}" class="btn btn-info"><i class="fa fa-edit"></i>
+                 
+                <a href="{{ aurl('edit/profile') }}" class="btn btn-info"><i class="fa fa-edit"></i>
                 {{ trans('admin.Edit_profile') }} </a>
-                @endif
-                @if(auth::guard('admin')->user()->group_id ==  2) 
-                <a href="{{ aurl('admin/2/edit') }}" class="btn btn-info"><i class="fa fa-edit"></i>
-                {{ trans('admin.Edit_profile') }} </a>
-                @endif
-
-                  @if(auth::guard('admin')->user()->group_id ==  3) 
-                <a href="{{ aurl('admin/3/edit') }}" class="btn btn-info"><i class="fa fa-edit"></i>
-                {{ trans('admin.Edit_profile') }} </a>
-                @endif
-        @if(auth::guard('admin')->user()->group_id ==  4) 
-                <a href="{{ aurl('admin/4/edit') }}" class="btn btn-info"><i class="fa fa-edit"></i>
-                {{ trans('admin.Edit_profile') }} </a>
-                @endif
+                
 
 
                 </div>

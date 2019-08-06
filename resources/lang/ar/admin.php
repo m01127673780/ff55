@@ -69,7 +69,7 @@ return [
    'message_maintenance'          => 'رسالة الصيانة',
              'departments'                  => 'الشبكات',
    'department '                  => ' الشبكات',
-   'dep_name_ar'                  => 'اسم القسم بالعربى',
+   'dep_name'                  => 'اسم القسم بالعربى',
    'dep_name_en'                  => 'اسم القسم بالانجليزية',
    'parent'                       => 'فرعى من',
    'icon'                         => 'الرمز',

@@ -13,6 +13,10 @@
         {!! Form::label('name',trans('admin.name')) !!}
         {!! Form::text('name',$admin->name,['class'=>'form-control']) !!}
      </div>
+     <div class="form-group">
+        {!! Form::label('group_id',trans('admin.group_id')) !!}
+        {!! Form::text('group_id',$admin->group_id,['class'=>'form-control']) !!}
+     </div>
 
    
  

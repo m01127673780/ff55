@@ -330,8 +330,7 @@ INSERT INTO `files` VALUES (137,'1.jpg','139292','MbAsrSchxkqGBKSptCb3PnKm2N73jN
 INSERT INTO `files` VALUES (138,'50229538_2270995046519468_7329877009390108672_n.jpg','32384','XaXIjFQs5zIaeRjk6igXRgqLn0uqYrytlZxxnFB0.jpeg','products/5','products/5/XaXIjFQs5zIaeRjk6igXRgqLn0uqYrytlZxxnFB0.jpeg','image/jpeg','product',5,'2019-02-08 11:57:34','2019-02-08 11:57:34');
 CREATE TABLE IF NOT EXISTS `departments` (
 	`id`	integer NOT NULL PRIMARY KEY AUTOINCREMENT,
-	`dep_name_ar`	varchar NOT NULL,
-	`dep_name_en`	varchar NOT NULL,
+	`dep_name`	varchar NOT NULL,
 	`icon`	varchar,
 	`description`	varchar,
 	`keyword`	varchar,

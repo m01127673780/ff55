@@ -11,10 +11,10 @@ class AdminController extends Controller {
 	public function profile()
 	{
 		$admin = auth('admin')->user();
-
-		dd( $admin->email );
+//		dd( $admin->email );
 
 		//return view('', compact('admin'));
+				return view('admin.admins.edit', compact('admin', 'title'));
 
 
 	}
@@ -94,6 +94,45 @@ class AdminController extends Controller {
 	 * @param  int  $id
 	 * @return \Illuminate\Http\Response
 	 */
+
+
+
+	public function edit_profile()
+	{
+		$admin = auth('admin')->user();
+		$title = trans('admin.profile');
+	
+
+		return view('admin.admins.profile', compact('admin', 'title'));
+	}
+
+	public function update_profile()
+	{
+		$data = $this->validate(request(),
+		[
+			'name'     => 'required',
+			'email'    => 'required|email|unique:admins,email,'.auth('admin')->user()->id,
+			'password' => 'sometimes|nullable|min:6',
+			'group_id'         => 'sometimes|nullable|',
+
+           
+		], [], [
+			'name'     => trans('admin.name'),
+			'email'    => trans('admin.email'),
+			'password' => trans('admin.password'),
+			]);
+
+    
+      
+
+		if (request()->has('password')) {
+			$data['password'] = bcrypt(request('password'));
+		}
+		Admin::where('id', auth('admin')->user()->id)->update($data);
+		return back()->with('success', 'Done Profile Update');
+	}
+
+
 	public function edit($id) {
 
 		$user_group_id = auth('admin')->user()->group_id;
@@ -108,8 +147,8 @@ class AdminController extends Controller {
 				$admin = $admin->first();
 				return view('admin.admins.edit', compact('admin', 'title'));
 			}else {
-				//abort(404); OR
-				return 'Not found';
+				return view('admin.admins.edit', compact('admin', 'title'));
+				// return 'Not found';
 			}
 		} // End If Check If Group id == 3
 		else {

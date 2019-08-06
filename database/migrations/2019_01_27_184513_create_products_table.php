@@ -34,8 +34,10 @@ Schema::create('products', function (Blueprint $table) {
             $table->integer('nun_sms')->unsigned()->nullable();
             $table->integer('num_member')->unsigned()->nullable();
             $table->integer('date_month')->unsigned()->nullable();
+           // $table->integer('price')->unsigned()->nullable();
+            //   $table->integer('price');
 
-            $table->decimal('price', 5, 2)->default(0);
+             $table->decimal('price',8,2)->default(0);
    
             $table->longtext('other_data')->nullable();
 
